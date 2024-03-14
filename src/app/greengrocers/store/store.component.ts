@@ -1,6 +1,8 @@
-import { Component, OnInit } from '@angular/core';
-import { ApiRequestsService } from '../api-requests.service';
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { ApiRequestsService } from '../utils/api-requests.service';
 import { Item } from 'src/app/models/item';
+import { CartService } from '../utils/cart.service';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-store',
@@ -8,8 +10,9 @@ import { Item } from 'src/app/models/item';
   styleUrls: ['./store.component.css']
 })
 
-export class StoreComponent implements OnInit {
+export class StoreComponent implements OnInit, OnDestroy {
   constructor(private apiRequestsService: ApiRequestsService) { }
+  itemSubscription: Subscription = new Subscription;
 
   items: Item[] = [];
 
@@ -17,11 +20,15 @@ export class StoreComponent implements OnInit {
     this.getProducts()
   }
 
+  ngOnDestroy(): void {
+    this.itemSubscription.unsubscribe()
+  }
+
   getProducts()  {
-    this.apiRequestsService.getProducts()
+    this.itemSubscription = this.apiRequestsService.getProducts()
       .subscribe(data => {
         console.log(data);
         this.items = [ ...data ]
-      });
+    });
   }
 }
