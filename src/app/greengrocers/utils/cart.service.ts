@@ -7,10 +7,7 @@ import { Item } from 'src/app/models/item';
 })
 export class CartService {
   constructor() { }
-  items: CartItem[] = [
-    {id: '001-beetroot', name: 'beetroot', price: 0.35, quantity: 1},
-    {id: '002-carrot', name: 'carrot', price: 0.2, quantity: 2}
-  ];
+  items: CartItem[] = [];
 
   Add(item: Item) {
     const ItemIndex = this.items.findIndex(i => i.id === item.id)
