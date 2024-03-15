@@ -5,6 +5,7 @@ import { StoreComponent } from './store/store.component';
 import { TotalComponent } from './total/total.component';
 import { ItemComponent } from './store/item/item.component';
 import { HttpClientModule } from '@angular/common/http';
+import { FilterComponent } from './filter/filter.component';
 
 
 
@@ -13,7 +14,8 @@ import { HttpClientModule } from '@angular/common/http';
     CartComponent,
     StoreComponent,
     TotalComponent,
-    ItemComponent
+    ItemComponent,
+    FilterComponent
   ],
   imports: [
     CommonModule,
@@ -22,7 +24,8 @@ import { HttpClientModule } from '@angular/common/http';
   exports: [
     StoreComponent,
     CartComponent,
-    TotalComponent
+    TotalComponent,
+    FilterComponent
   ]
 })
 export class GreengrocersModule { }

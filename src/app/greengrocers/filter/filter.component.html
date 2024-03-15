@@ -1,0 +1,10 @@
+<div class="filter-container">
+  <button
+    class="{{ isFruitFiltered ? 'remove-btn' : 'add-btn' }}"
+    (click)="toggleFruit()"
+  >Fruits</button>
+  <button
+    class="{{ isVegetableFiltered ? 'remove-btn' : 'add-btn' }}"
+    (click)="toggleVegetable()"
+  >Vegetables</button>
+</div>

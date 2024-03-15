@@ -63,6 +63,13 @@ button {
   }
 }
 
+/* Filters */
+.filter-container {
+  display: flex;
+  justify-content: center;
+}
+
+
 /* Cart */
 
 #cart {
