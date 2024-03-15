@@ -44,8 +44,6 @@ export class StoreComponent implements OnInit, OnDestroy {
     });
   }
 
-
-
   filterItems() {
     this.itemsToDisplay = this.items;
 

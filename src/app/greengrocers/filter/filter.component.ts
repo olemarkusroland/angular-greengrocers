@@ -9,12 +9,12 @@ import { FilterService } from '../utils/filter.service';
 export class FilterComponent {
   constructor(private filterService: FilterService) {}
 
-  get isFruitFiltered() {
-    return !this.filterService.displayFruit;
+  get displayFruit() {
+    return this.filterService.displayFruit;
   }
 
-  get isVegetableFiltered() {
-    return !this.filterService.displayVegetable;
+  get displayVegetable() {
+    return this.filterService.displayVegetable;
   }
 
   toggleFruit() {
